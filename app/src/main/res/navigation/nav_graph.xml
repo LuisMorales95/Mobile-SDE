@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/driverFragment">
+
+    <fragment
+        android:id="@+id/driverFragment"
+        android:name="com.jlmp.mobilesdecodeexercise.presentation.driver.DriverFragment"
+        android:label="Drivers"
+        tools:layout="@layout/fragment_driver" >
+        <action
+            android:id="@+id/action_driverFragment_to_driverDetailFragment"
+            app:destination="@id/driverDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/driverDetailFragment"
+        android:name="com.jlmp.mobilesdecodeexercise.presentation.driverDetails.DriverDetailFragment"
+        android:label="Driver Detail"
+        tools:layout="@layout/fragment_driver_detail"  >
+        <argument
+            android:name="driverId"
+            app:argType="long" />
+    </fragment>
+</navigation>
