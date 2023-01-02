@@ -16,6 +16,7 @@ import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.awaitAll
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.test.runBlockingTest
+import kotlinx.coroutines.test.runTest
 import org.hamcrest.MatcherAssert.assertThat
 import org.hamcrest.core.IsEqual
 import org.junit.After
@@ -27,8 +28,8 @@ import java.util.concurrent.CountDownLatch
 
 
 @ExperimentalCoroutinesApi
-@RunWith(AndroidJUnit4::class)
 @MediumTest
+@RunWith(AndroidJUnit4::class)
 class DriverDaoTest {
 
     @get:Rule
@@ -44,13 +45,8 @@ class DriverDaoTest {
             .build()
     }
 
-    @After
-    fun closeDatabase() {
-        database.close()
-    }
-
     @Test
-    fun insertDriver() = runBlockingTest {
+    fun insertDriver() = runTest {
         val driver = Driver(id = 1L, name = "John Doe")
         database.driverDao().insert(driver.toEntity())
         val loadedDriver = database.driverDao().getById(driver.id)
@@ -100,5 +96,10 @@ class DriverDaoTest {
             assertThat(shipment.address, IsEqual(it.shipmentEntity?.address))
         }
 
+    }
+
+    @After
+    fun closeDatabase() {
+        database.close()
     }
 }

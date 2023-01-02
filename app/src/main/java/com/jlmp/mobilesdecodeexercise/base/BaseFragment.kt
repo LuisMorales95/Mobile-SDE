@@ -33,7 +33,7 @@ abstract class BaseFragment<B : ViewBinding>(@LayoutRes val layout: Int) : Fragm
     fun launch(destinationId: Int, bundle: Bundle? = null) {
         findNavController().navigate(destinationId, bundle)
     }
-    fun launch(directions: NavDirections, bundle: Bundle? = null) {
+    fun launch(directions: NavDirections) {
         findNavController().navigate(directions)
     }
 
