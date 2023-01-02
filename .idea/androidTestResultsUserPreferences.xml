@@ -3,6 +3,35 @@
   <component name="AndroidTestResultsUserPreferences">
     <option name="androidTestResultsTableState">
       <map>
+        <entry key="-1993453908">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Pixel_2_API_26" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="-1679441978">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-1547040972">
           <value>
             <AndroidTestResultsTableState>
@@ -31,12 +60,28 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="187765371">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="263601830">
           <value>
             <AndroidTestResultsTableState>
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
                   <entry key="Pixel_2_API_26" value="120" />
                   <entry key="Pixel_2_API_30" value="120" />
                   <entry key="Pixel_2_XL_API_28" value="120" />
@@ -72,6 +117,20 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="1285147456">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="1673381382">
           <value>
             <AndroidTestResultsTableState>
@@ -92,6 +151,9 @@
               <option name="preferredColumnWidths">
                 <map>
                   <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Pixel_2_API_26" value="120" />
                   <entry key="Pixel_2_XL_API_28" value="120" />
                   <entry key="Tests" value="360" />
                 </map>

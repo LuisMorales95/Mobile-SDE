@@ -32,7 +32,9 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/label_driver" />
+
             <TextView
+                android:id="@+id/driver_text"
                 style="@style/TextAppearance.AppCompat.Title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
