@@ -4,7 +4,7 @@ import com.jlmp.domain.DriverWithShipment
 import com.jlmp.domain.repository.DriverRepository
 import javax.inject.Inject
 
-class GetDriverWithShipments @Inject constructor(
+class GetDriverWithShipmentsUseCase @Inject constructor(
     val driverRepository: DriverRepository
 ): BaseCase<Long, DriverWithShipment>() {
     override suspend fun invoke(data: Long): DriverWithShipment {

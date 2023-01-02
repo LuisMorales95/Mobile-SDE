@@ -1,5 +1,8 @@
 package com.jlmp.common.utils
 
+
+
+
 val vowels = listOf('a','e','i', 'o', 'u')
 
 fun String.removeSpace(): String {

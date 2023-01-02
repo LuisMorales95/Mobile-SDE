@@ -16,7 +16,7 @@ class DriverDbDataSourceImpl @Inject constructor(
 ) : DriverDbDataSource {
 
     override suspend fun getDriversFlow(): Flow<List<DriverWithShipment>> {
-        return database.driverDao().getAllFlow().map {
+        return database.driverDao().getAllDriverWithShipmentFlow().map {
             it.map { it.toDomain() }
         }
     }
@@ -26,7 +26,7 @@ class DriverDbDataSourceImpl @Inject constructor(
     }
 
     override suspend fun getDriver(id: Long): DriverWithShipment {
-        return database.driverDao().get(id).toDomain()
+        return database.driverDao().getDriverWithShipmentById(id).toDomain()
     }
 
     override suspend fun addDrivers(drivers: List<Driver>) {

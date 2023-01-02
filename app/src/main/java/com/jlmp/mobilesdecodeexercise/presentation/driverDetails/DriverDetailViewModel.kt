@@ -3,18 +3,17 @@ package com.jlmp.mobilesdecodeexercise.presentation.driverDetails
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MediatorLiveData
 import androidx.lifecycle.MutableLiveData
-import androidx.lifecycle.Transformations
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.jlmp.domain.DriverWithShipment
-import com.jlmp.interactors.GetDriverWithShipments
+import com.jlmp.interactors.GetDriverWithShipmentsUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class DriverDetailViewModel @Inject constructor(
-    private val getDriverWithShipments: GetDriverWithShipments
+    private val getDriverWithShipmentsUseCase: GetDriverWithShipmentsUseCase
 ): ViewModel() {
 
     private var _driversWithShipment : MutableLiveData<DriverWithShipment> =  MutableLiveData()
@@ -33,7 +32,7 @@ class DriverDetailViewModel @Inject constructor(
 
     fun getDriver(driverId: Long) {
         viewModelScope.launch {
-            val driverWithShipments = getDriverWithShipments.invoke(driverId)
+            val driverWithShipments = getDriverWithShipmentsUseCase.invoke(driverId)
             _driversWithShipment.postValue(driverWithShipments)
         }
     }

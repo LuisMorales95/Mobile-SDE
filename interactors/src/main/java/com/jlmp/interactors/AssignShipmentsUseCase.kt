@@ -5,7 +5,7 @@ import com.jlmp.domain.repository.DriverRepository
 import com.jlmp.domain.repository.ShipmentRepository
 import javax.inject.Inject
 
-class AssignShipments @Inject constructor(
+class AssignShipmentsUseCase @Inject constructor(
     private val driverRepository: DriverRepository,
     private val shipmentRepository: ShipmentRepository
 ): BaseCase<Unit, Unit>() {

@@ -1,5 +1,6 @@
 package com.jlmp.mobilesdecodeexercise.presentation.driver
 
+import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -20,7 +21,13 @@ class DriverFragment : BaseFragment<FragmentDriverBinding>(R.layout.fragment_dri
         model.drivers.observe(this) {
             adapter.submitList(it)
         }
+        model.dataLoading.observe(this) {
+            binding.progress.visibility = visible(it)
+        }
+        model.getDrivers()
     }
+
+    private fun visible(it: Boolean) = if (it) View.VISIBLE else View.GONE
 
     private fun initRecycler() {
         adapter = DriverAdapter(DriverAdapter.DriverListener {
