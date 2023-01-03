@@ -1,46 +1,50 @@
 package com.jlmp.mobilesdecodeexercise.presentacion
 
-import android.os.Bundle
-import androidx.fragment.app.testing.launchFragmentInContainer
-import androidx.navigation.NavController
+import androidx.arch.core.executor.testing.InstantTaskExecutorRule
 import androidx.navigation.Navigation
-import androidx.recyclerview.widget.RecyclerView
-import androidx.test.espresso.Espresso
-import androidx.test.espresso.action.ViewActions
-import androidx.test.espresso.contrib.RecyclerViewActions
-import androidx.test.espresso.matcher.ViewMatchers
-import androidx.test.espresso.matcher.ViewMatchers.withId
+import androidx.navigation.testing.TestNavHostController
+import androidx.test.core.app.ApplicationProvider
+import androidx.test.espresso.matcher.ViewMatchers.assertThat
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import com.jlmp.mobilesdecodeexercise.R
+import com.jlmp.mobilesdecodeexercise.launchFragmentInHiltContainer
 import com.jlmp.mobilesdecodeexercise.presentation.driver.DriverFragment
 import com.jlmp.mobilesdecodeexercise.presentation.driver.DriverFragmentDirections
+import dagger.hilt.android.testing.HiltAndroidRule
+import dagger.hilt.android.testing.HiltAndroidTest
+import kotlinx.coroutines.ExperimentalCoroutinesApi
+import org.hamcrest.core.IsEqual
+import org.junit.Before
+import org.junit.Rule
 import org.junit.Test
 import org.junit.runner.RunWith
-import org.mockito.Mockito.mock
-import org.mockito.Mockito.verify
 
+@ExperimentalCoroutinesApi
 @RunWith(AndroidJUnit4::class)
+@HiltAndroidTest
 class DriverFragmentTest {
 
+    @get:Rule
+    var hiltRule = HiltAndroidRule(this)
+    // single task rule
+    @get:Rule
+    var instantTaskExecutorRule = InstantTaskExecutorRule()
+
+    @Before
+    fun setup() {
+        hiltRule.inject()
+    }
+
     @Test
-    fun clickDriver_navigateToDetailFragment() {
-        val driver = "Everardo Welch"
-        val scenario = launchFragmentInContainer<DriverFragment>(
-            fragmentArgs = Bundle(),
-            themeResId = R.style.Theme_MobileSDECodeExercise
-        )
-        val navController = mock(NavController::class.java)
-        scenario.onFragment {
-            Navigation.setViewNavController(it.view!!, navController)
+    fun navigation_navigateToDriverDetailFragment() {
+        val navController = TestNavHostController(ApplicationProvider.getApplicationContext())
+        launchFragmentInHiltContainer<DriverFragment>() {
+            navController.setGraph(R.navigation.nav_graph)
+            Navigation.setViewNavController(this.view!!,navController)
+            assertThat(navController.currentDestination?.id, IsEqual(R.id.driverFragment))
+            navController.navigate(DriverFragmentDirections.actionDriverFragmentToDriverDetailFragment(1L))
+            assertThat(navController.currentDestination?.id, IsEqual(R.id.driverDetailFragment))
+
         }
-        Espresso.onView(withId(R.id.recycler)).perform(
-            RecyclerViewActions.actionOnItem<RecyclerView.ViewHolder>(
-                ViewMatchers.hasDescendant(ViewMatchers.withText(driver)),
-                ViewActions.click()
-            )
-        )
-        verify(navController).navigate(
-            DriverFragmentDirections.actionDriverFragmentToDriverDetailFragment(1L)
-        )
     }
 }

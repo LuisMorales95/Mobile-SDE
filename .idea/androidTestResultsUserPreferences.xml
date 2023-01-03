@@ -3,6 +3,20 @@
   <component name="AndroidTestResultsUserPreferences">
     <option name="androidTestResultsTableState">
       <map>
+        <entry key="-2011270574">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="-1993453908">
           <value>
             <AndroidTestResultsTableState>
@@ -91,6 +105,20 @@
             </AndroidTestResultsTableState>
           </value>
         </entry>
+        <entry key="449639212">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
         <entry key="688938486">
           <value>
             <AndroidTestResultsTableState>
@@ -98,6 +126,20 @@
                 <map>
                   <entry key="Duration" value="90" />
                   <entry key="Pixel_2_API_26" value="120" />
+                  <entry key="Tests" value="360" />
+                </map>
+              </option>
+            </AndroidTestResultsTableState>
+          </value>
+        </entry>
+        <entry key="792691783">
+          <value>
+            <AndroidTestResultsTableState>
+              <option name="preferredColumnWidths">
+                <map>
+                  <entry key="Duration" value="90" />
+                  <entry key="G2R4C17519002963" value="120" />
+                  <entry key="HUAWEI&#10; HUAWEI VNS-L53" value="120" />
                   <entry key="Tests" value="360" />
                 </map>
               </option>

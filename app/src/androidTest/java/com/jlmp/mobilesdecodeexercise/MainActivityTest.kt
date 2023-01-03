@@ -19,7 +19,6 @@ class MainActivityTest {
     fun openDriverDetail() {
         val driver = "Everardo Welch"
         val activityScenario = ActivityScenario.launch(MainActivity::class.java)
-
         onView(withId(R.id.progress)).check(matches(not(isDisplayed())))
         onView(withId(R.id.recycler)).check(matches(hasDescendant(withText(driver))))
         onView(withId(R.id.recycler)).perform(
