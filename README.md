@@ -25,7 +25,7 @@
 To run the tests find all the classes that terminate with the word "Test".  
   
 
-**Run Single Test**  
+**Single Test**  
   
 
 - To run a single test, click on the Play Icon located beside the test function  
